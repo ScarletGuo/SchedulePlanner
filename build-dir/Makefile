@@ -205,6 +205,7 @@ DIST          = ../Documents/CS368/Qt/5.7/clang_64/mkspecs/features/spec_pre.prf
 		../Documents/CS368/Qt/5.7/clang_64/mkspecs/features/qt_config.prf \
 		../Documents/CS368/Qt/5.7/clang_64/mkspecs/macx-clang/qmake.conf \
 		../Documents/CS368/Qt/5.7/clang_64/mkspecs/features/spec_post.prf \
+		../Documents/CS368/schedule/.qmake.stash \
 		../Documents/CS368/Qt/5.7/clang_64/mkspecs/features/exclusive_builds.prf \
 		../Documents/CS368/Qt/5.7/clang_64/mkspecs/features/default_pre.prf \
 		../Documents/CS368/Qt/5.7/clang_64/mkspecs/features/mac/default_pre.prf \
@@ -384,6 +385,7 @@ Makefile: ../Documents/CS368/schedule/Schedule.pro ../Qt/5.7/clang_64/mkspecs/fe
 		../Qt/5.7/clang_64/mkspecs/features/qt_config.prf \
 		../Qt/5.7/clang_64/mkspecs/macx-clang/qmake.conf \
 		../Qt/5.7/clang_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../Qt/5.7/clang_64/mkspecs/features/exclusive_builds.prf \
 		../Qt/5.7/clang_64/mkspecs/features/default_pre.prf \
 		../Qt/5.7/clang_64/mkspecs/features/mac/default_pre.prf \
@@ -546,6 +548,7 @@ Makefile: ../Documents/CS368/schedule/Schedule.pro ../Qt/5.7/clang_64/mkspecs/fe
 ../Qt/5.7/clang_64/mkspecs/features/qt_config.prf:
 ../Qt/5.7/clang_64/mkspecs/macx-clang/qmake.conf:
 ../Qt/5.7/clang_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../Qt/5.7/clang_64/mkspecs/features/exclusive_builds.prf:
 ../Qt/5.7/clang_64/mkspecs/features/default_pre.prf:
 ../Qt/5.7/clang_64/mkspecs/features/mac/default_pre.prf:
