@@ -175,6 +175,13 @@ void ScheduleWidget::editEntry()
     aDialog.roomText->setText(room);
     aDialog.modelText->setText(model);
     aDialog.infoText->setText(info);
+    /**
+    aDialog.radio1->setDisabled(true);
+    aDialog.radio2->setDisabled(true);
+    aDialog.radio3->setDisabled(true);
+    aDialog.radio4->setDisabled(true);
+    aDialog.radio5->setDisabled(true);
+    */
     if (weekday == "MON")
         aDialog.radio1->setChecked(true);
     else if (weekday == "TUE")
@@ -187,9 +194,43 @@ void ScheduleWidget::editEntry()
         aDialog.radio5->setChecked(true);
 
     if (aDialog.exec()) {
-        QString newSchedule = aDialog.IDText->text();
+        QString newSchedule = aDialog.timeText->text();
+        if (newSchedule != time) {
+            QModelIndex index = table->index(row, 0, QModelIndex());
+            table->setData(index, newSchedule, Qt::EditRole);
+        }
+        newSchedule = aDialog.IDText->text();
         if (newSchedule != ID) {
             QModelIndex index = table->index(row, 1, QModelIndex());
+            table->setData(index, newSchedule, Qt::EditRole);
+        }
+        newSchedule = aDialog.roomText->text();
+        if (newSchedule != room) {
+            QModelIndex index = table->index(row, 2, QModelIndex());
+            table->setData(index, newSchedule, Qt::EditRole);
+        }
+        newSchedule = aDialog.modelText->text();
+        if (newSchedule != model) {
+            QModelIndex index = table->index(row, 3, QModelIndex());
+            table->setData(index, newSchedule, Qt::EditRole);
+        }
+        newSchedule = aDialog.infoText->text();
+        if (newSchedule != info) {
+            QModelIndex index = table->index(row, 4, QModelIndex());
+            table->setData(index, newSchedule, Qt::EditRole);
+        }
+        if (aDialog.radio1->isChecked())
+            newSchedule = "MON";
+        else if (aDialog.radio2->isChecked())
+                newSchedule = "TUE";
+        else if (aDialog.radio3->isChecked())
+                newSchedule = "WED";
+        else if (aDialog.radio4->isChecked())
+                newSchedule = "THU";
+        else if (aDialog.radio5->isChecked())
+                newSchedule = "FRI";
+        if (newSchedule != weekday) {
+            QModelIndex index = table->index(row, 5, QModelIndex());
             table->setData(index, newSchedule, Qt::EditRole);
         }
     }
